@@ -26,7 +26,7 @@ cruise = Restaurant.create(name: "Kona baridi", city: "Kiserian", state: "Kenya"
 Review.create(body: "Awesome place to be", "user_id": user.id, "restaurant_id":balk.id)
 Review.create(body: "It is a wonderful place for staycation", "user_id": user.id, "restaurant_id":cruise.id)
 Review.create(body: "I really enjoyed the stay", "user_id": user.id, "restaurant_id":balk.id)
-Review.create(body: "Bless this place", "user_id": user.id, "restaurant_id":cruise.id)
+Review.create(body: "Bless this place. I saw wonders", "user_id": user.id, "restaurant_id":cruise.id)
 Review.create(body: "I love this place. Damn!", "user_id": user.id, "restaurant_id":balk.id)
 Review.create(body: "Extremely comfy", "user_id": user.id, "restaurant_id":cruise.id)
 Review.create(body: "Guys, this is the place to be", "user_id": user.id, "restaurant_id":cruise.id)
