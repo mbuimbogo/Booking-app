@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show, :update]
   patch '/restaurants/:id/like', to: 'restaurants#increment_likes'
   post "/login", to: "sessions#create"
+  get "/me", to: "users#show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
