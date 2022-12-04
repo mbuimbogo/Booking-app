@@ -3,12 +3,12 @@ class UsersController < ApplicationController
 
     def index
         users = User.all
-        render json: users, only:[:id, :name, :user_name]
+        render json: users
     end
 
     def show
         user = User.find(params[:id])
-        render json: user, only:[:id, :name,:user_name], include: :reviews
+        render json: user
     end
     
     def destroy
