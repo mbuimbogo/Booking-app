@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
     wrap_parameters format: []
+    before_action :authorize
+    skip_before_action :authorize, only: [:index, :show]
+
     def index
         reviews = Review.all
         render json: reviews
@@ -40,6 +43,10 @@ class ReviewsController < ApplicationController
 
     def render_not_found_response
         render json: { error: "Review not found" }, status: :not_found
-      end
+    end
+
+    def authorize
+        return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
+    end
 
 end
