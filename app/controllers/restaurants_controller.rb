@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
     def show
        restaurant =Restaurant.find_by(id: params[:id])
         if restaurant
-          render json:restaurant
+          render json:restaurant, include: :bookings
         else
           render_not_found_response
         end
@@ -17,7 +17,7 @@ class RestaurantsController < ApplicationController
             render_not_found_response
         end
       end
-# REMEMBER TO ADD A COLUMN OF LIKES
+
     def increment_likes
         restaurant = Restaurant.find_by(id: params[:id])
         if restaurant
@@ -27,12 +27,12 @@ class RestaurantsController < ApplicationController
             render_not_found_response
         end
     end
-    
-    private
-    # def restaurant_params
-    #     params.permit(:name, :city, :state, :likes)
-    # end
 
+    private
+    def restaurant_params
+        params.permit(:name, :city, :state, :likes)
+    end
+    private
     def render_not_found_response
         render json: { error: "Restaurant not found" }, status: :not_found
       end
