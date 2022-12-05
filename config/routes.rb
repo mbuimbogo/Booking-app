@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :bookings
+  resources :bookings, only: [:index,:create]
   resources :reviews, only: [:index, :show, :create, :destroy]
   resources :users
   resources :restaurants, only: [:index, :show, :update]
