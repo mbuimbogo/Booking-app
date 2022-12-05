@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
     def index
+        user = User.find(session[:user_id])
         users = User.all
         render json: users
     end
@@ -11,14 +12,14 @@ class UsersController < ApplicationController
         render json: user
     end
 
-    def show
-        user = User.find_by(id: session[:user_id])
-        if user
-          render json: user
+      def create 
+        user = User.create(user_params)
+        if user.valid?
+            render json: user, status: :created
         else
-          render json: { error: "Not authorized" }, status: :unauthorized
+            render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
         end
-      end
+    end
     
     def destroy
         user = User.find_by(id: params[:id])
@@ -28,11 +29,15 @@ class UsersController < ApplicationController
         else
           render json: { error: "User not found" }, status: :not_found
         end
-      end
+    end
 
     private
     def render_not_found_response
         render json: { error: "User not found" }, status: :not_found
     end
+
+    def user_params
+        params.permit(:user_name, :password, :password_confirmation)
+      end
 
 end

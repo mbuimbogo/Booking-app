@@ -7,16 +7,16 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "seeding data.."
-user = User.create(name: "Sophia Nganga", user_name: "Kabda")
-first = User.create(name: "Verah Njenga", user_name: "Vee")
-third = User.create(name: "Nana Owiti", user_name: " Vin")
-forth = User.create(name: "Ian Macharia", user_name: " Sartivah")
-fifth = User.create(name: "Mukangu Munini", user_name: " Vaite")
-sixth = User.create(name: "Esther Muturi", user_name: " Princess")
-seventh = User.create(name: "Reagan Kinoti", user_name: " Scotty")
-eigth = User.create(name: "Wanjiku Muinamia", user_name: " Dee")
-ninth = User.create(name: "Wambui Ericah", user_name: " Santos")
-second = User.create(name: "Meghan Njeri", user_name: "Princeess")
+user = User.create(name: "Sophia Nganga", user_name: "Kabda", password: "Kabda")
+first = User.create(name: "Verah Njenga", user_name: "Vee", password: "Vee")
+third = User.create(name: "Nana Owiti", user_name: " Vin", password: "Vin")
+forth = User.create(name: "Ian Macharia", user_name: " Sartivah", password: "Sartivah")
+fifth = User.create(name: "Mukangu Munini", user_name: " Vaite", password: "Vaite")
+sixth = User.create(name: "Esther Muturi", user_name: " Princess", password: "Princess")
+seventh = User.create(name: "Reagan Kinoti", user_name: " Scotty", password: "Scotty")
+eigth = User.create(name: "Wanjiku Muinamia", user_name: " Dee", password: "Dee")
+ninth = User.create(name: "Wambui Ericah", user_name: " Santos", password: "Santos")
+second = User.create(name: "Meghan Njeri", user_name: "Princeess", password: "Princeses")
 
 #restaurants seed
 balk = Restaurant.create(name: "Dhaba Resto", city: "Nairobi", state: "Kenya")

@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
         else
           render_not_found_response
         end
-      end
+    end
 
     private
     def review_params
