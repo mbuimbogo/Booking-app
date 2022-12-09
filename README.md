@@ -1,5 +1,17 @@
 # RESTAURANNT BOOKING APP API
 
+## Live link
+[Frontend app live link](https://booking-app-frontend-three.vercel.app)
+[Frontend github repo link](https://github.com/mbuimbogo/Booking-app-frontend)
+
+ ## Backend links
+ [live link](https://restaurant-booking-app-production.up.railway.app)
+
+ [github link](https://github.com/mbuimbogo/Booking-app)
+
+
+## Description
+
 Restaurant booking app API is a RESTful API that provides a way to create, update, delete and retrieve news users, bookings and restaurants.
 
 ## Set-Up
